@@ -54,32 +54,31 @@ body {
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 40px;
+    padding: 30px;
     border-radius: 24px;
     text-align: center;
-    width: 450px; /* حجم البي سي */
+    width: 90%; 
+    max-width: 420px; 
+    height: auto; /* يمنع انفعاص العناصر ويجعلها تتمدد طبيعي */
+    margin: 20px auto;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     z-index: 10;
 }
 
-/* تأثير الرينبو للصورة */
-.logo-container {
-    display: inline-block;
-    margin-bottom: 15px;
-}
-
 .main-logo {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    transition: transform 0.3s ease;
+    width: 120px; /* كبرت الحجم شوي بما أنها صارت مربعة */
+    height: auto;
+    max-height: 120px;
+    border-radius: 12px; /* انحناء بسيط جداً للزوايا ليعطي شكل مودرن، أو خلها 0 لو تبيها حادة تماماً */
+    object-fit: contain;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
     cursor: pointer;
 }
 
 .main-logo:hover {
     transform: scale(1.05);
+    /* تأثير الرينبو اللي طلبته بيبقى شغال */
     animation: rainbowGlow 2.5s linear infinite;
 }
 
