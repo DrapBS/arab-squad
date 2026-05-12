@@ -1,0 +1,115 @@
+/* استدعاء الخط الخاص بك */
+@font-face {
+    font-family: 'HoboStd';
+    src: url('assets/hobostd2.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'HoboStd', sans-serif; /* تطبيق الخط على كل شيء */
+}
+
+body {
+    background-color: #0f0f13;
+    background-image: radial-gradient(circle at top right, #2a2a35, #0f0f13);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.main-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.links-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.link-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 15px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+/* تأثيرات عند تمرير الماوس */
+.link-card.discord:hover {
+    background: rgba(88, 101, 242, 0.2);
+    border-color: #5865F2;
+    transform: translateY(-3px);
+}
+
+.link-card.telegram:hover {
+    background: rgba(0, 136, 204, 0.2);
+    border-color: #0088cc;
+    transform: translateY(-3px);
+}
+
+.icon {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+/* الكلمة الشفافة */
+.footer {
+    position: absolute;
+    bottom: 20px;
+}
+
+.footer p {
+    font-size: 1.2rem;
+    opacity: 0.15; /* شفافية عالية */
+    user-select: none;
+    letter-spacing: 2px;
+}
+
+/* أنيميشن الدخول */
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
