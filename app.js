@@ -1,16 +1,39 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const linkCards = document.querySelectorAll('.link-card');
-
-    linkCards.forEach(card => {
-        card.addEventListener('click', function(e) {
-            // إضافة تأثير بسيط عند الضغط (انيميشن النقر)
+    // تأثير الضغط على الأزرار
+    const buttons = document.querySelectorAll('.link-card, .contact-card');
+    buttons.forEach(btn => {
+        btn.addEventListener('mousedown', function() {
             this.style.transform = 'scale(0.95)';
-            
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 150);
+        });
+        btn.addEventListener('mouseup', function() {
+            this.style.transform = '';
+        });
+        btn.addEventListener('mouseleave', function() {
+            this.style.transform = '';
         });
     });
 
-    console.log("Website Loaded Successfully. ByDrap :)");
+    // برمجة النافذة المنبثقة (Modal)
+    const modal = document.getElementById('infoModal');
+    const logo = document.getElementById('squadLogo');
+    const closeBtn = document.querySelector('.close-btn');
+
+    // فتح النافذة عند الضغط على اللوجو
+    logo.addEventListener('click', () => {
+        modal.classList.add('show');
+    });
+
+    // إغلاق النافذة عند الضغط على زر X
+    closeBtn.addEventListener('click', () => {
+        modal.classList.remove('show');
+    });
+
+    // إغلاق النافذة عند الضغط في أي مكان خارجها
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.classList.remove('show');
+        }
+    });
+
+    console.log("UI Loaded. Built by Adem. ByDrap :)");
 });
